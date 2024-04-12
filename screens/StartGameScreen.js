@@ -63,7 +63,7 @@ const styles = StyleSheet.create({
     borderRadius: 8,
     marginTop: 100,
     padding: 16,
-    backgroundColor: 'purple',
+    backgroundColor: '#750f3a',
     elevation: 4,
     shadowColor: 'black',
     shadowOffset: { width: 0, height: 2 },

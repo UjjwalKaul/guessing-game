@@ -6,7 +6,7 @@ export default function PrimaryButton({ children, onPress }) {
     <View style={styles.buttonOuter}>
       <Pressable
         style={styles.Btncontainer}
-        android_ripple={{ color: '#640233' }}
+        android_ripple={{ color: '#640233', borderRadius: 20 }}
         onPress={onPress}>
         <Text style={styles.buttonText}>{children}</Text>
       </Pressable>
@@ -16,15 +16,15 @@ export default function PrimaryButton({ children, onPress }) {
 
 const styles = StyleSheet.create({
   Btncontainer: {
-    backgroundColor: '#2213',
-    borderRadius: 25,
+    backgroundColor: '#923e96',
+    borderRadius: 20,
     paddingVertical: 8,
     paddingHorizontal: 16,
     elevation: 2,
     margin: 4,
   },
   buttonOuter: {
-    borderRadius: 25,
+    borderRadius: 20,
     margin: 4,
     overflow: 'hidden',
   },
