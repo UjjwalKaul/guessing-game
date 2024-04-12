@@ -16,7 +16,7 @@ export default function PrimaryButton({ children, onPress }) {
 
 const styles = StyleSheet.create({
   Btncontainer: {
-    backgroundColor: '#923e96',
+    backgroundColor: '#8f284a',
     borderRadius: 20,
     paddingVertical: 8,
     paddingHorizontal: 16,
