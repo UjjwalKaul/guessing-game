@@ -10,7 +10,6 @@ export default function StartGameScreen({ onConfirm }) {
 
   function numberInputHandler(enteredText) {
     setEnteredNumber(enteredText);
-    console.log(enteredText);
   }
 
   function resetInputHandler() {
@@ -18,7 +17,6 @@ export default function StartGameScreen({ onConfirm }) {
   }
 
   function confirmInputHandler() {
-    console.log('Number confirmed ' + enteredNumber);
     const chosenNumber = parseInt(enteredNumber);
     if (isNaN(chosenNumber) || chosenNumber <= 0 || chosenNumber > 99) {
       Alert.alert('Invalid Number', 'Pick a number between 1 and 99', [
