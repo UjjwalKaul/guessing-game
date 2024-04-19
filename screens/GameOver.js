@@ -3,7 +3,7 @@ import React from 'react';
 import Title from '../components/Title';
 import PrimaryButton from '../components/PrimaryButton';
 
-export default function GameOver() {
+export default function GameOver({ roundsNumber, userNumber, onStartNewGame }) {
   return (
     <View style={styles.root}>
       <Title>Game Over</Title>
@@ -11,10 +11,11 @@ export default function GameOver() {
         <Image style={styles.image} source={require('../assets/success.png')} />
       </View>
       <Text style={styles.summaryText}>
-        Your phone needed <Text style={styles.highlight}>X</Text> rounds to
-        guess number <Text style={styles.highlight}>Y</Text>
+        Your phone needed <Text style={styles.highlight}>{roundsNumber}</Text>{' '}
+        rounds to guess number{' '}
+        <Text style={styles.highlight}>{userNumber}</Text>
       </Text>
-      <PrimaryButton>Start New Game</PrimaryButton>
+      <PrimaryButton onPress={onStartNewGame}>Start New Game</PrimaryButton>
     </View>
   );
 }
