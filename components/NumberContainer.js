@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
   },
   text: {
     fontSize: 36,
-    fontWeight: 'bold',
+    fontFamily: 'open-sans-bold',
     color: '#ddb52f',
   },
 });
