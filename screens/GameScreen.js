@@ -6,6 +6,7 @@ import PrimaryButton from '../components/PrimaryButton';
 import Card from '../components/Card';
 import InstructionText from '../components/InstructionText';
 import { Ionicons } from '@expo/vector-icons';
+import GuessLogItem from '../components/GuessLogItem';
 
 function generateRandomBetween(min, max, exclude) {
   const rndNum = Math.floor(Math.random() * (max - min)) + min;
@@ -23,6 +24,8 @@ export default function GameScreen({ userNumber, onGameOver }) {
   const initialGuess = generateRandomBetween(1, 100, userNumber);
   const [currentGuess, setCurrentGuess] = useState(initialGuess);
   const [guessRounds, setGuessRounds] = useState([initialGuess]);
+
+  const guessRoundsListLength = guessRounds.length;
 
   useEffect(() => {
     if (currentGuess === userNumber) {
@@ -83,8 +86,15 @@ export default function GameScreen({ userNumber, onGameOver }) {
         </View>
       </Card>
       <View>
-        {guessRounds.map((guessRound) => {
-          return <Text key={guessRound}>{guessRound}</Text>;
+        {guessRounds.map((guessRound, index) => {
+          console.log(index);
+          return (
+            <GuessLogItem
+              key={index}
+              roundNumber={guessRoundsListLength - index}
+              guess={currentGuess}
+            />
+          );
         })}
       </View>
     </View>
