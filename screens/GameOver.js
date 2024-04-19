@@ -1,6 +1,7 @@
 import { View, Text, Image, StyleSheet } from 'react-native';
 import React from 'react';
 import Title from '../components/Title';
+import PrimaryButton from '../components/PrimaryButton';
 
 export default function GameOver() {
   return (
@@ -9,7 +10,11 @@ export default function GameOver() {
       <View style={styles.foreground}>
         <Image style={styles.image} source={require('../assets/success.png')} />
       </View>
-      <Text>Your phone needed X rounds to guess number Y</Text>
+      <Text style={styles.summaryText}>
+        Your phone needed <Text style={styles.highlight}>X</Text> rounds to
+        guess number <Text style={styles.highlight}>Y</Text>
+      </Text>
+      <PrimaryButton>Start New Game</PrimaryButton>
     </View>
   );
 }
@@ -33,5 +38,15 @@ const styles = StyleSheet.create({
     padding: 24,
     justifyContent: 'center',
     alignItems: 'center',
+  },
+  summaryText: {
+    fontFamily: 'open-sans',
+    fontSize: 24,
+    textAlign: 'center',
+    marginBottom: 24,
+  },
+  highlight: {
+    fontFamily: 'open-sans-bold',
+    color: 'black',
   },
 });
